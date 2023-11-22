@@ -1,13 +1,12 @@
 const express = require("express");
 const cors = require("cors");
 const data = require("./data.json")
-// const mongoDb = require("./mongoDb")
 const userRouter = require("./Router/user.router.js")
 
 const app = express();
 app.use(express.json())
 app.use(cors());
-// app.use("/user",userRouter);
+app.use("/user",userRouter);
 
 app.get("/data", (req, res) => {
   res.status(200).json(data)
