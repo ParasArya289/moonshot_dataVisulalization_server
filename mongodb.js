@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-// Access your MongoDB connection string from secrets
+// // Access your MongoDB connection string from secrets
 
 const mongoURI = process.env['MONGODB']
 
@@ -12,3 +12,5 @@ mongoose.connect(mongoURI, {
 }).catch(error => {
   console.error('Error connecting to MongoDB:', error);
 });
+
+

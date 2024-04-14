@@ -21,7 +21,7 @@ const signupController = async(req,res)=>{
     const savedUser = await createAccount({...body,password:hashedPassword});
     res.status(201).json({message:"Account created",user:savedUser,token:generatedToken});
   }catch(error){
-    res.status(500).json({error:"Failed to create User account"})
+    res.status(500).json({message:"Failed to create User account"})
   }
 }
 
@@ -42,7 +42,7 @@ const loginController = async(req,res)=>{
     }
     res.status(200).json({message:"successfully loggedin",user,token:jwt.sign({username},secret)})
   }catch(error){
-    res.status(401).json({error:error.message})
+    res.status(401).json({message:error.message})
   }
 }
 module.exports = {signupController,loginController};
